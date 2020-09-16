@@ -1,5 +1,5 @@
-%define snapshot 20200825
-%define commit 44a24136cb99c17142364f0b647319d6d1aa7b99
+%define snapshot 20200916
+%define commit cc1ac2452e41873741c8b5f3fcafa29ae3ce5a30
 
 Name:		kalk
 Version:	0.1.1
