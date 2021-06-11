@@ -2,10 +2,14 @@
 #define commit cc1ac2452e41873741c8b5f3fcafa29ae3ce5a30
 
 Name:		kalk
-Version:	0.2
+Version:	21.06
 Release:	%{?snapshot:0.%{snapshot}.}1
 Summary:	Calculator for Plasma Mobile
+%if 0%{?snapshot}
 Source0:	https://invent.kde.org/plasma-mobile/kalk/-/archive/v%{version}/kalk-v%{version}.tar.bz2
+%else
+Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
+%endif
 License:	GPLv3
 Group:		Applications/Productivity
 BuildRequires:	cmake
@@ -29,7 +33,7 @@ BuildRequires:	flex
 Calculator for Plasma Mobile
 
 %prep
-%autosetup -p1 -n kalk-v%{version}
+%autosetup -p1
 %cmake_kde5 -G Ninja
 
 %build
@@ -37,8 +41,9 @@ Calculator for Plasma Mobile
 
 %install
 %ninja_install -C build
+%find_lang kalk
 
-%files
+%files -f kalk.lang
 %{_bindir}/kalk
 %{_datadir}/applications/org.kde.kalk.desktop
 %{_datadir}/icons/hicolor/scalable/apps/kalk.svg
