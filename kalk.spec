@@ -2,8 +2,8 @@
 #define commit cc1ac2452e41873741c8b5f3fcafa29ae3ce5a30
 
 Name:		kalk
-Version:	21.06
-Release:	%{?snapshot:0.%{snapshot}.}1
+Version:	21.07
+Release:	%{?snapshot:1.%{snapshot}.}1
 Summary:	Calculator for Plasma Mobile
 %if 0%{?snapshot}
 Source0:	https://invent.kde.org/plasma-mobile/kalk/-/archive/v%{version}/kalk-v%{version}.tar.bz2
