@@ -29,6 +29,8 @@ BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	bison
 BuildRequires:	flex
+BuildRequires:	pkgconfig(mpfr)
+BuildRequires:	pkgconfig(gmp)
 
 %description
 Calculator for Plasma Mobile
