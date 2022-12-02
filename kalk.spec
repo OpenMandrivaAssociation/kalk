@@ -2,7 +2,7 @@
 #define commit cc1ac2452e41873741c8b5f3fcafa29ae3ce5a30
 
 Name:		kalk
-Version:	22.09
+Version:	22.11
 Release:	%{?snapshot:1.%{snapshot}.}1
 Summary:	Calculator for Plasma Mobile
 %if 0%{?snapshot}
@@ -49,5 +49,5 @@ Calculator for Plasma Mobile
 %files -f kalk.lang
 %{_bindir}/kalk
 %{_datadir}/applications/org.kde.kalk.desktop
-%{_datadir}/icons/hicolor/scalable/apps/kalk.svg
 %{_datadir}/metainfo/org.kde.kalk.appdata.xml
+%{_datadir}/icons/hicolor/scalable/apps/org.kde.kalk.svg
