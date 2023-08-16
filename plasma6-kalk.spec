@@ -26,6 +26,12 @@ BuildRequires:	flex
 BuildRequires:	pkgconfig(mpfr)
 BuildRequires:	pkgconfig(gmp)
 
+Requires: kf6-kirigami
+Requires: %{_lib}KF6Kirigami
+# This is wrong but looks like qt6qml devel contains needed qml() components.
+Requires: cmake(Qt6Qml)
+Requires: kf6-qqc2-desktop-style
+
 %description
 Calculator for Plasma Mobile
 
