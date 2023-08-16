@@ -29,7 +29,7 @@ BuildRequires:	pkgconfig(gmp)
 Calculator for Plasma Mobile
 
 %prep
-%autosetup kalk-v%{version} -p1
+%autosetup -n kalk-v%{version} -p1
 %cmake  \
         -G Ninja \
         -DBUILD_WITH_QT6:BOOL=ON \
