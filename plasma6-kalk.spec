@@ -1,5 +1,5 @@
 Name:		plasma6-kalk
-Version:	23.07.90
+Version:	24.01.90
 Release:	1
 Summary:	Calculator for Plasma Mobile made in Qt6 and KF6
 Source0:	https://invent.kde.org/plasma-mobile/kalk/-/archive/v%{version}/kalk-v%{version}.tar.bz2
