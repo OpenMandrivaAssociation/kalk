@@ -11,6 +11,9 @@ BuildRequires:  cmake(Qt6)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Quick)
+BuildRequires:  cmake(Qt6Qml)
+BuildRequires:  cmake(Qt6QmlCore)
+BuildRequires:  cmake(Qt6QmlNetwork)
 BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Svg)
@@ -21,15 +24,17 @@ BuildRequires:	cmake(KF6I18n)
 BuildRequires:	cmake(KF6UnitConversion)
 BuildRequires:	cmake(KF6Config)
 BuildRequires:	cmake(KF6CoreAddons)
+BuildRequires:  qt6-qtbase-theme-gtk3
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	pkgconfig(mpfr)
 BuildRequires:	pkgconfig(gmp)
+BuildRequires:  pkgconfig(libqalculate)
 
 Requires: kf6-kirigami
 Requires: %{_lib}KF6Kirigami
 # This is wrong but looks like qt6qml devel contains needed qml() components.
-Requires: cmake(Qt6Qml)
+#Requires: cmake(Qt6Qml)
 Requires: kf6-qqc2-desktop-style
 
 %description
