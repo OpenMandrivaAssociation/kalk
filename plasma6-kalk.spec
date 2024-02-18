@@ -1,8 +1,15 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Name:		plasma6-kalk
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 Summary:	Calculator for Plasma Mobile made in Qt6 and KF6
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/utilities/kalk/-/archive/%{gitbranch}/kalk-%{gitbranchd}.tar.bz2#/kalk-%{git}.tar.bz2
+%else
 Source0:	https://invent.kde.org/plasma-mobile/kalk/-/archive/v%{version}/kalk-v%{version}.tar.bz2
+%endif
 License:	GPLv3
 Group:		Applications/Productivity
 BuildRequires:	cmake
@@ -41,7 +48,7 @@ Requires: kf6-qqc2-desktop-style
 Calculator for Plasma Mobile
 
 %prep
-%autosetup -n kalk-v%{version} -p1
+%autosetup -p1 -n kalk-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake  \
         -G Ninja \
         -DBUILD_WITH_QT6:BOOL=ON \
