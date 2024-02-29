@@ -1,14 +1,15 @@
-%define git 20240218
+#define git 20240218
 %define gitbranch release/24.02
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Name:		plasma6-kalk
-Version:	24.01.96
+Version:	24.02.0
 Release:	%{?git:0.%{git}.}1
 Summary:	Calculator for Plasma Mobile made in Qt6 and KF6
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/utilities/kalk/-/archive/%{gitbranch}/kalk-%{gitbranchd}.tar.bz2#/kalk-%{git}.tar.bz2
 %else
-Source0:	https://invent.kde.org/plasma-mobile/kalk/-/archive/v%{version}/kalk-v%{version}.tar.bz2
+%define stable %(if [ "$(echo %{version}|cut -d. -f3)" -ge 50 ]; then echo -n un; fi; echo -n stable)
+Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/kalk-%{version}.tar.xz
 %endif
 License:	GPLv3
 Group:		Applications/Productivity
