@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Name:		plasma6-kalk
 Version:	24.02.2
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Summary:	Calculator for Plasma Mobile made in Qt6 and KF6
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/utilities/kalk/-/archive/%{gitbranch}/kalk-%{gitbranchd}.tar.bz2#/kalk-%{git}.tar.bz2
