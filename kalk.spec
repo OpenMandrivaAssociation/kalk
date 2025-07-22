@@ -2,7 +2,7 @@
 %define gitbranch release/24.02
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Name:		kalk
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Summary:	Calculator for Plasma Mobile made in Qt6 and KF6
 %if 0%{?git:1}
@@ -13,8 +13,6 @@ Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/kalk-
 %endif
 License:	GPLv3
 Group:		Applications/Productivity
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:  cmake(Qt6)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
@@ -45,23 +43,15 @@ Requires: %{_lib}KF6Kirigami
 #Requires: cmake(Qt6Qml)
 Requires: kf6-qqc2-desktop-style
 
+%rename plasma6-kalk
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 Calculator for Plasma Mobile
 
-%prep
-%autosetup -p1 -n kalk-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake  \
-        -G Ninja \
-        -DBUILD_WITH_QT6:BOOL=ON \
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang kalk
-
-%files -f kalk.lang
+%files -f %{name}.lang
 %{_bindir}/kalk
 %{_datadir}/applications/org.kde.kalk.desktop
 %{_datadir}/metainfo/org.kde.kalk.appdata.xml
