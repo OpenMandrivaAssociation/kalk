@@ -2,7 +2,7 @@
 %define gitbranch release/24.02
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Name:		kalk
-Version:	25.08.0
+Version:	25.08.1
 Release:	%{?git:0.%{git}.}1
 Summary:	Calculator for Plasma Mobile made in Qt6 and KF6
 %if 0%{?git:1}
